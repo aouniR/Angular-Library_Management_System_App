@@ -1,0 +1,92 @@
+<!-- Here, NgIf structural directive to test and show specific part according to the action attribute of the command-details component -->
+<div *ngIf="action === 'Add Book'">
+    <h3>Add Book</h3>
+    <!-- We have here an event binding to submit the form inputs and save them the the book'list-->
+    <form (ngSubmit)="onAddBookSubmit()">
+      <div class="form-group">
+        <label for="id">ID:</label>
+        <input type="text" class="form-control" id="id" [(ngModel)]="newBook.id" name="id" required>
+      </div>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" id="title" [(ngModel)]="newBook.title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="author">Author:</label>
+        <input type="text" class="form-control" id="author" [(ngModel)]="newBook.author" name="author" required>
+      </div>
+      <div class="form-group">
+        <label for="publisher">Publisher:</label>
+        <input type="text" class="form-control" id="publisher" [(ngModel)]="newBook.publisher" name="publisher" required>
+      </div>
+      <div class="form-group">
+        <label for="publicationDate">Publication Date:</label>
+        <input type="date" class="form-control" id="publicationDate" [(ngModel)]="newBook.publicationDate" name="publicationDate" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Book</button>
+    </form>
+  </div>
+
+  <!-- Here, NgIf structural directive to test and show specific part according to the action attribute of the command-details component -->
+  
+  <div *ngIf="action === 'Show Books'">
+      <!-- We have here a list group shown the saved books -->
+    <h3>Book List</h3>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let book of bookList">
+        ID: {{ book.id }}, Title: {{ book.title }}, Author: {{ book.author }}, Publisher: {{ book.publisher }}, Publication Date: {{ book.publicationDate }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Here, NgIf structural directive to test and show specific part according to the action attribute of the command-details component -->
+
+  <div *ngIf="action === 'Update Book'">
+    <h3>Update Book</h3>
+      <!-- We have here an event binding to submit the form inputs and save them the the book'list-->
+    <form (ngSubmit)="onManageBookSubmit()">
+      <div class="form-group">
+        <label for="selectedBookId">Select Book by ID:</label>
+        <select class="form-control" id="selectedBookId" [(ngModel)]="selectedBookId" name="selectedBookId" required>
+          <option *ngFor="let book of bookList" [value]="book.id">{{ book.id }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" id="title" [(ngModel)]="selectedBook.title" name="title" required>
+
+      </div>
+      <div class="form-group">
+        <label for="author">Author:</label>
+        <input type="text" class="form-control" id="author" [(ngModel)]="selectedBook.author" name="author" required>
+      </div>
+      <div class="form-group">
+        <label for="publisher">Publisher:</label>
+        <input type="text" class="form-control" id="publisher" [(ngModel)]="selectedBook.publisher" name="publisher" required>
+      </div>
+      <div class="form-group">
+        <label for="publicationDate">Publication Date:</label>
+        <input type="date" class="form-control" id="publicationDate" [(ngModel)]="selectedBook.publicationDate" name="publicationDate" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Changes</button>
+    </form>
+  </div>
+
+  
+  <!-- Here, NgIf structural directive to test and show specific part according to the action attribute of the command-details component -->
+
+  <div *ngIf="action === 'Delete Book'">
+    <h3>Delete Book</h3>
+      <!-- We have here an event binding to submit the form inputs and save them the the book'list-->
+    <form (ngSubmit)="onDeleteBookSubmit()">
+      <div class="form-group">
+        <label for="selectedBookId">Select Book by ID:</label>
+        <select class="form-control" id="selectedBookId" [(ngModel)]="selectedBookId" name="selectedBookId" required>
+          <option *ngFor="let book of bookList" [value]="book.id">{{ book.id }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Changes</button>
+    </form>
+  </div>
+
+  

@@ -1,0 +1,37 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+
+  <hr>
+  <div class="mb-auto">
+    <ul class="nav nav-pills flex-column">
+      <!-- Here, We have Event Binding to handle the click and resend the Emit and Proprety Binding to specify the command name-->
+      <app-command (commandSent)="sendCommandtoDashboard($event)"  [command_Name]="'Add Book'"></app-command>
+    </ul>
+  </div>
+
+  <hr>
+  <div class="mb-auto">
+    <ul class="nav nav-pills flex-column">
+      <!-- Here, We have Event Binding to handle the click and resend the Emit and Proprety Binding to specify the command name-->
+      <app-command (commandSent)="sendCommandtoDashboard($event)" [command_Name]="'Show Books'"></app-command>
+    </ul>
+  </div>
+
+  <hr>
+  <div class="mb-auto">
+    <ul class="nav nav-pills flex-column">
+      <!-- Here, We have Event Binding to handle the click and resend the Emit and Proprety Binding to specify the command name-->
+      <app-command (commandSent)="sendCommandtoDashboard($event)" [command_Name]="'Update Book'"></app-command>
+    </ul>
+  </div>
+
+  <hr>
+  <div class="mb-auto">
+    <ul class="nav nav-pills flex-column">
+      <!-- Here, We have Event Binding to handle the click and resend the Emit and Proprety Binding to specify the command name-->
+      <app-command (commandSent)="sendCommandtoDashboard($event)" [command_Name]="'Delete Book'"></app-command>
+    </ul>
+  </div>
+
+  <hr>
+</div>
+

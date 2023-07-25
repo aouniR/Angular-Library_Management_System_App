@@ -1,0 +1,18 @@
+<!-- with the Proprety Binding show = true we gonna hide the login and register button from the header-->
+<app-header [show]="true"></app-header>
+<div class="container mt-5">
+    <!-- Here, We have Event Binding to handle the Submit click and proceed the test by the onSubmit() method-->
+  <form  (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <!-- Here, We have Two-way binding to save the email to the userData.email attribute -->
+      <input type="email" name="Email" [(ngModel)]="userData.email" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <!-- Here, We have Two-way binding to save the password to the userData.password attribute -->
+      <input type="password" name="password" [(ngModel)]="userData.password" class="form-control" >
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

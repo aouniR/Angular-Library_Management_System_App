@@ -5,13 +5,15 @@
 /tmp
 /out-tsc
 /bazel-out
-
+/dist-server/
+/angular-dist/
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
 
 # IDEs and editors
+*.log
 .idea/
 .project
 .classpath
@@ -40,3 +42,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Dependency directories
+/dependencies/
+/bower_components/

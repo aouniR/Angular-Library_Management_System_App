@@ -1,0 +1,12 @@
+<app-header [show]="false"></app-header>
+<div class="container">
+    <div class="list-component">
+        <!-- Here, We have Event Binding to handle the click event information and save the msg in the command attribute by the commandToDetails() method -->
+      <app-liste (commandSent)="commandToDetails($event)"></app-liste>
+    </div>
+    <div class="command-details-component">
+        <!-- Here, We have proprety binding to charge the called part in the command-details component, by the previous binding we could now sepecify which action choosen by the user-->
+      <app-command-details [action]="command"></app-command-details>
+    </div>
+  </div>
+  
